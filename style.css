@@ -329,10 +329,13 @@ section {
 
 .experience-details-container {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  flex-direction: row; /* Align project containers in a row */
+  flex-wrap: wrap; /* Allow the containers to wrap */
+  justify-content: center; /* Center the containers in the viewport */
+  gap: 2rem; /* Add some space between the project containers */
+  max-width: 100%; /* Ensure the container does not exceed the width of the viewport */
+  padding: 0 2rem; /* Add padding on the left and right */
 }
-
 .article-container {
   display: flex;
   text-align: initial;
@@ -356,7 +359,7 @@ article .icon {
 /* PROJECTS SECTION */
 
 #projects {
-  position: relative;
+  position: center;
 }
 
 .color-container {
