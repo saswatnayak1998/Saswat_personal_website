@@ -37,15 +37,12 @@ nav {
   justify-content: space-around;
   align-items: center;
   height: 17vh;
-  padding-top: 15vh;
 }
 
 .nav-links {
   gap: 2rem;
   list-style: none;
-  padding-top: 9vh;
   font-size: 1.5rem;
-
 }
 
 a {
@@ -391,7 +388,6 @@ article .icon {
 #contact {
   display: flex;
   justify-content: center;
-  padding-top: 100vh;
   flex-direction: column;
   height: 70vh;
 }
@@ -490,6 +486,8 @@ footer p {
   bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
+}
+=======
 }
 
 /* HOBBIES SECTION */
