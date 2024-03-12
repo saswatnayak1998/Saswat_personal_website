@@ -472,7 +472,7 @@ footer p {
   bottom: 0;
 }
 .card-back p {
-  font-size: 14px; /* or any other size that fits your design */
+  font-size: 12px; /* or any other size that fits your design */
   /* ...other styles... */
 }
 /* When container has flipped class */
@@ -487,3 +487,57 @@ footer p {
   left: 50%;
   transform: translateX(-50%);
 }
+=======
+}
+
+/* HOBBIES SECTION */
+#hobbies {
+  position: relative;
+  padding-top: 4vh;
+  margin: 0 auto; /* Center the section */
+  max-width: 1200px; /* Maximum width of the section */
+}
+
+.hobbies-details-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Center items horizontally */
+  gap: 2rem; /* Space between items */
+}
+
+.details-container {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 2rem;
+  border: 1px solid #a3a3a3;
+  text-align: center;
+  width: calc(50% - 1rem); /* Two items per row, accounting for the gap */
+  box-sizing: border-box; /* Include padding in width calculation */
+  overflow: hidden; /* Prevent content from overflowing */
+}
+
+.hobbies-sub-title {
+  margin: 1rem 0;
+  font-size: 1.5rem; /* Adjust title font size */
+}
+
+.hobby-img {
+  width: 100%; /* Make image use full container width */
+  height: auto; /* Keep aspect ratio */
+  margin-bottom: 1rem;
+}
+
+.hobby-description {
+  font-size: 1rem; /* Adjust paragraph font size */
+  height: 3rem; /* Set a fixed height for text to align items vertically */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis to overflow text */
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .details-container {
+    width: calc(100% - 2rem); /* One item per row on smaller screens */
+  }
+}
+
