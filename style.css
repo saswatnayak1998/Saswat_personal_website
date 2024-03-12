@@ -476,7 +476,7 @@ footer p {
   bottom: 0;
 }
 .card-back p {
-  font-size: 14px; /* or any other size that fits your design */
+  font-size: 12px; /* or any other size that fits your design */
   /* ...other styles... */
 }
 /* When container has flipped class */
@@ -491,7 +491,6 @@ footer p {
   left: 50%;
   transform: translateX(-50%);
 }
-/* HOBBIES SECTION */
 
 /* HOBBIES SECTION */
 #hobbies {
@@ -543,3 +542,4 @@ footer p {
     width: calc(100% - 2rem); /* One item per row on smaller screens */
   }
 }
+
