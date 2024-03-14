@@ -472,7 +472,7 @@ footer p {
   bottom: 0;
 }
 .card-back p {
-  font-size: 14px; /* or any other size that fits your design */
+  font-size: 12px; /* or any other size that fits your design */
   /* ...other styles... */
 }
 /* When container has flipped class */
@@ -490,22 +490,51 @@ footer p {
 #ask_me {
   display: flex;
   justify-content: center;
-  gap: 5rem;
-  height: 4vh;
+  gap: 1rem; /* Reduced gap for smaller screens */
+  height: auto; /* Adjust height automatically */
 }
+
 .ask_me__section__text {
-  position: absolute; /* Position the form and button absolutely within #profile */
-  top: 20%; /* Align to the top of the #profile */
-  left: 50%; /* Center relative to the #profile width */
-  transform: translateX(-50%); /* Offset by half the width of .section__text to center it */
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .ask_me__ask_me_anything {
   border-radius: 30px;
-  height: 3rem;
-  width: 50rem;
-  font-size: 20px;
-  padding-left: 10px;
+  height: 3rem; /* You might want to use 'auto' or a percentage for responsive height */
+  width: 90%; /* Start with a relative width */
+  max-width: 100rem; /* Maximum width for larger screens */
+  font-size: 12;
+  padding: 0 10px; /* Padding on both sides */
   font-family: "Poppins", sans-serif;
-  margin-bottom: 2rem; /* Add space between the input and the button */
+  margin-bottom: 2rem;
+}
+
+/* Add a media query for phone screens (usually widths under 768px are a good breakpoint) */
+@media (max-width: 768px) {
+  #ask_me {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    gap: 0.5rem; /* Even smaller gap for very small screens */
+  }
+
+  .ask_me__section__text {
+    position: static; /* Use static positioning on small screens */
+    transform: none; /* Remove transform */
+  }
+
+  .ask_me__ask_me_anything {
+    width: 90%; /* Allow the input to take more width on small screens */
+    margin-bottom: 1rem; /* Reduce margin */
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+
+  .btn-container {
+    width: 90%; /* Adjust width for button container */
+  }
+  
+  .btn {
+    width: 100%; /* Button should fill its container */
+  }
 }
