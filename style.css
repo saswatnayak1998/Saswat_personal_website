@@ -487,3 +487,25 @@ footer p {
   left: 50%;
   transform: translateX(-50%);
 }
+#ask_me {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  height: 4vh;
+}
+.ask_me__section__text {
+  position: absolute; /* Position the form and button absolutely within #profile */
+  top: 20%; /* Align to the top of the #profile */
+  left: 50%; /* Center relative to the #profile width */
+  transform: translateX(-50%); /* Offset by half the width of .section__text to center it */
+}
+
+.ask_me__ask_me_anything {
+  border-radius: 30px;
+  height: 3rem;
+  width: 50rem;
+  font-size: 20px;
+  padding-left: 10px;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 2rem; /* Add space between the input and the button */
+}
