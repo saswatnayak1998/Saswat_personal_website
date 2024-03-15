@@ -472,7 +472,7 @@ footer p {
   bottom: 0;
 }
 .card-back p {
-  font-size: 14px; /* or any other size that fits your design */
+  font-size: 12px; /* or any other size that fits your design */
   /* ...other styles... */
 }
 /* When container has flipped class */
