@@ -515,13 +515,14 @@ footer p {
 }
 
 .video-container {
-  width: 250%; /* Set the width as desired */
+  width: 100%; /* Set the width as desired */
   height: auto; /* Set the height as desired */
   display: flex; /* Use flexbox for alignment */
   flex-direction: column; /* Stack items vertically */
   align-items: center; /* Center items on the cross axis */
   justify-content: center; /* Center items on the main axis */
   margin: auto; /* Center the container itself */
+  margin-bottom:20px;
 }
 
 .video-container video {
@@ -539,8 +540,8 @@ footer p {
 }
 
 /* Add this if you haven't styled .btn-color-1 class yet */
-.btn-color-1 {
-  /* Add styles for color and background or use a class that's already defined */
+.header-learning{
+  margin-left:40px;
 }
 
 video {
