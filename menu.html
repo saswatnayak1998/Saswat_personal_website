@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <section id="projects">
+      <p class="section__text__p1"></p>
+      <h1 class="title">Articles and Code</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="card-inner">
+              <!-- Front Side -->
+              <div class="card-front">
+                <div class="article-container">
+                <img src="./assets/DBSCAN.png" alt="Project 1" class="project-img" /></div>
+                <h2 class="experience-sub-title project-title">DBSCAN vs Kmeans</h2>
+                <div class="btn-container">
+                  <button class="btn btn-color-2 project-btn" onclick="window.location.href='learnings.html'">Live Demo</button>
+                  <button class="btn btn-color-2 project-btn about-btn">About</button>
+                </div>
+              </div>
+              <!-- Back Side -->
+              <div class="card-back">
+                <p>In a realm where math weaves deep complexities,
+                    There exists an algorithm, clear as day,
+                    So pure and plain, it catches the eye with ease.</p>
+                <button class="btn btn-color-2 project-btn flip-back-btn">Back</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="details-container color-container">
+            <div class="card-inner">
+              <!-- Front Side -->
+              <div class="card-front">
+                <div class="article-container">
+                <img src="./assets/chat_bot.png" alt="Project 1" class="project-img" /></div>
+                <h2 class="experience-sub-title project-title">LangChain Chatbot</h2>
+                <div class="btn-container">
+                  <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/saswatnayak1998'">Github</button>
+                  <button class="btn btn-color-2 project-btn about-btn">About</button>
+                </div>
+              </div>
+              <!-- Back Side -->
+              <div class="card-back">
+                <p>A chatbot(Sash) answering questions about what I know and what I don't know in a funny way(coming soon). Sash has been hired as a replacement for me.</p>
+                <button class="btn btn-color-2 project-btn flip-back-btn">Back</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="card-inner">
+              <!-- Front Side -->
+              <div class="card-front">
+                <div class="article-container">
+                <img src="./assets/project-2.png" onclick="window.location.href='menu.html'"" alt="Project 1" class="project-img" /></div>
+                <h2 class="experience-sub-title project-title">Design Principles of 3D Photonic Crystals</h2>
+                <div class="btn-container">
+                  <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/saswatnayak1998'">Github</button>
+                  <button class="btn btn-color-2 project-btn about-btn">About</button>
+                </div>
+              </div>
+              <!-- Back Side -->
+              <div class="card-back">
+                <p>Will write later lol</p>
+                <button class="btn btn-color-2 project-btn flip-back-btn">Back</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="card-inner">
+              <!-- Front Side -->
+              <div class="card-front">
+                <div class="article-container">
+                <img src="./assets/project-1.png" alt="Project 1" class="project-img" /></div>
+                <h2 class="experience-sub-title project-title">High Performance Filesystem</h2>
+                <div class="btn-container">
+                  <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/saswatnayak1998/High_Performance_MySQL_Database'">Github</button>
+                  <button class="btn btn-color-2 project-btn about-btn">About</button>
+                </div>
+              </div>
+              <!-- Back Side -->
+              <div class="card-back">
+                <p>An efficient file system by utilizing a relational database as the underlying storage system. The system features a user-friendly web interface enabling users to seamlessly perform basic file system operations in addition to visualizing directories as tree structures. Within its database, the project will store the structure of files and directories, along with metadata such as permissions and creation/update dates. The web application will incorporate user login functionality, ensuring secure management of file system permissions(coming soon).</p>
+                <button class="btn btn-color-2 project-btn flip-back-btn">Back</button>
+              </div>
+            </div>
+          </div>
+          
+
+          
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#contact'"
+      />
+    </section>
+
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:sknayak@wisc.edu">sknayak@wisc.edu</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.linkedin.com/in/saswat-nayak-664a30121/">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2023 Saswat Nayak. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

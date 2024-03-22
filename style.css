@@ -336,6 +336,15 @@ section {
   max-width: 100%; /* Ensure the container does not exceed the width of the viewport */
   padding: 0 2rem; /* Add padding on the left and right */
 }
+.experience-details-container2 {
+  display: listitem;
+  flex-direction: row; /* Align project containers in a row */
+  flex-wrap: wrap; /* Allow the containers to wrap */
+  justify-content: center; /* Center the containers in the viewport */
+  gap: 2rem; /* Add some space between the project containers */
+  max-width: 100%; /* Ensure the container does not exceed the width of the viewport */
+  padding: 0 2rem; /* Add padding on the left and right */
+}
 .article-container {
   display: flex;
   text-align: initial;
@@ -487,57 +496,54 @@ footer p {
   left: 50%;
   transform: translateX(-50%);
 }
-=======
+.text-container_2 {
+  margin-left: 20px; /* Adjust the value as needed */
+  padding:20px; /* If you also want to add some padding */
+  /* Other styles like font can be added here if needed */
+  font-size: 25px; /* Example font size */
 }
-
-/* HOBBIES SECTION */
-#hobbies {
-  position: relative;
-  padding-top: 4vh;
-  margin: 0 auto; /* Center the section */
-  max-width: 1200px; /* Maximum width of the section */
-}
-
-.hobbies-details-container {
+.content-wrapper {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
-  justify-content: center; /* Center items horizontally */
-  gap: 2rem; /* Space between items */
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.details-container {
-  padding: 1.5rem;
-  background: white;
-  border-radius: 2rem;
-  border: 1px solid #a3a3a3;
-  text-align: center;
-  width: calc(50% - 1rem); /* Two items per row, accounting for the gap */
-  box-sizing: border-box; /* Include padding in width calculation */
-  overflow: hidden; /* Prevent content from overflowing */
+.text-article {
+  width: 100%; /* Text takes 75% width */
+  margin-left: 40px;
+  /* Add padding, font size, etc., as necessary */
 }
 
-.hobbies-sub-title {
-  margin: 1rem 0;
-  font-size: 1.5rem; /* Adjust title font size */
+.video-container {
+  width: 250%; /* Set the width as desired */
+  height: auto; /* Set the height as desired */
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items on the cross axis */
+  justify-content: center; /* Center items on the main axis */
+  margin: auto; /* Center the container itself */
 }
 
-.hobby-img {
-  width: 100%; /* Make image use full container width */
-  height: auto; /* Keep aspect ratio */
-  margin-bottom: 1rem;
+.video-container video {
+  max-width: 100%; /* Make the video responsive */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Space between the video and the button */
+  margin-right: 20px;
 }
 
-.hobby-description {
-  font-size: 1rem; /* Adjust paragraph font size */
-  height: 3rem; /* Set a fixed height for text to align items vertically */
-  overflow: hidden; /* Hide overflow text */
-  text-overflow: ellipsis; /* Add ellipsis to overflow text */
-  margin-bottom: 1rem;
+.btn {
+  /* Additional button styling if needed */
+  cursor: pointer;
+  padding: 10px 20px; /* Button padding */
+  /* Add other styles like background-color, color, border, etc. */
 }
 
-@media (max-width: 768px) {
-  .details-container {
-    width: calc(100% - 2rem); /* One item per row on smaller screens */
-  }
+/* Add this if you haven't styled .btn-color-1 class yet */
+.btn-color-1 {
+  /* Add styles for color and background or use a class that's already defined */
 }
 
+video {
+  width: 100%; /* Ensure video is responsive within its container */
+  height: auto; /* Maintain aspect ratio */
+}
