@@ -515,6 +515,7 @@ footer p {
 }
 
 .video-container {
+  max-width:fit-content;
   width: 100%; /* Set the width as desired */
   height: auto; /* Set the height as desired */
   display: flex; /* Use flexbox for alignment */
