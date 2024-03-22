@@ -487,7 +487,7 @@ footer p {
   left: 50%;
   transform: translateX(-50%);
 }
-=======
+
 }
 
 /* HOBBIES SECTION */
@@ -540,4 +540,5 @@ footer p {
     width: calc(100% - 2rem); /* One item per row on smaller screens */
   }
 }
+
 
