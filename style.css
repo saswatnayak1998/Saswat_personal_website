@@ -260,6 +260,12 @@ section {
   background: rgb(248, 2, 2);
 }
 
+.btn-color-3:hover {
+  border: rgb(251, 0, 0) 0.1rem solid;
+}
+.btn-color-3 {
+  border: rgb(252, 126, 1) 0.1rem solid;
+}
 .btn-color-2 {
   background: none;
 }
@@ -401,6 +407,10 @@ article .icon {
 .project-btn {
   color: black;
   border-color: rgb(163, 163, 163);
+}
+.project-btn1 {
+  color: white;
+  border-color: rgb(255, 115, 0);
 }
 
 /* CONTACT */
@@ -559,4 +569,32 @@ footer p {
 video {
   width: 100%; /* Ensure video is responsive within its container */
   height: auto; /* Maintain aspect ratio */
+}
+
+#ask_me {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Reduced gap for smaller screens */
+  height: auto; /* Adjust height automatically */
+}
+
+.ask_me__section__text {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ask_me__ask_me_anything {
+  border-radius: 30px;
+  position: relative;
+
+  width: 600px;
+  height: 50px;
+  max-width: 600px; /* Maximum width for larger screens */
+  font-size: 20;
+  padding:0 10px; /* Padding on both sides */
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 2rem;
+
 }
