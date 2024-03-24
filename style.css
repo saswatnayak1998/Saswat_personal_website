@@ -297,7 +297,7 @@ section {
 
 .about-containers,
 .about-details-container {
-  display: flex;
+  display: inline-flex;
 }
 
 .about-pic {
@@ -354,7 +354,7 @@ section {
   padding: 0 2rem; /* Add padding on the left and right */
 }
 .experience-details-container2 {
-  display: listitem;
+  display: flex;
   flex-direction: row; /* Align project containers in a row */
   flex-wrap: wrap; /* Allow the containers to wrap */
   justify-content: center; /* Center the containers in the viewport */
@@ -385,7 +385,7 @@ article .icon {
 /* PROJECTS SECTION */
 
 #projects {
-  position: center;
+  position: relative;
 }
 
 .color-container {
@@ -589,10 +589,10 @@ video {
   border-radius: 30px;
   position: relative;
 
-  width: 600px;
+  width: 600%;
   height: 50px;
-  max-width: 600px; /* Maximum width for larger screens */
-  font-size: 20;
+  max-width: 500px; /* Maximum width for larger screens */
+  font-size: 40;
   padding:0 10px; /* Padding on both sides */
   font-family: "Poppins", sans-serif;
   margin-bottom: 2rem;
