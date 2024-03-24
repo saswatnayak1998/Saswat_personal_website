@@ -16,17 +16,23 @@
             alert("Under Construction");
         }
     </script>
+
     <nav id="desktop-nav">
         <div class="logo">Mistral 7B model fine-tuned on my data</div>
     </nav>
     <div>
         <div class="ask_me__section__text">
-            <form>
-              <input class="ask_me__ask_me_anything" type="text" name="name" id="name" placeholder="Ask me anything">
-            </form>
+          <form id="ask-form">
+            <input class="ask_me__ask_me_anything" type="text" name="question" id="name" placeholder="Ask me anything">
             <div class="btn-container">
-              <button class="btn btn-color-1" onclick="showUnderConstructionAlert()">Ask</button>
+              <button class="btn btn-color-1" type="submit">Ask</button>
             </div>
+          </form>
+          <div id="loading" style="display: none;"></div>
+
+          <div id="answer-container"></div>
+          
+     
           </div>
     </div>
     
@@ -34,5 +40,42 @@
 
 
   </main>
+  <script>
+    document.getElementById('ask-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+    
+        // Show the loading indicator
+        document.getElementById('loading').style.display = 'block';
+        document.getElementById('answer-container').innerText = ''; // Clear previous answer
+    
+        const formData = new FormData(event.target);
+        const question = formData.get('question'); // Get the question from the form
+    
+        fetch('http://127.0.0.1:5000/ask', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json', // Indicate that we're sending JSON data
+            },
+            body: JSON.stringify({ "question": question }), // Send the question as JSON
+        })
+        .then(response => response.json()) // Parse the response as JSON
+        .then(data => {
+            // Hide the loading indicator
+            document.getElementById('loading').style.display = 'none';
+            
+            // Display the response
+            document.getElementById('answer-container').innerText = data.answer;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Hide the loading indicator and show error message if needed
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('answer-container').innerText = 'Failed to get a response.';
+        });
+    });
+    </script>
+    
+    
+    
 </body>
 </html>

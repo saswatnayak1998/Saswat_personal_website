@@ -12,9 +12,12 @@ from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_community.llms import Ollama
 from langchain_core.prompts import ChatPromptTemplate
+from flask_cors import CORS
+
 
 # instantiate Flask app and database
 app = Flask(__name__)
+CORS(app) 
 
 def chatbot(question):
     llm = Ollama(model="llama2")
@@ -26,7 +29,7 @@ def chatbot(question):
 
     output_parser = StrOutputParser()
     chain = prompt | llm | output_parser
-    loader = WebBaseLoader("https://65ffce813173b6000817d5c7--saswatwebsite.netlify.app/about.html")
+    loader = WebBaseLoader("http://127.0.0.1:5500/about.html")
 
     docs = loader.load()
 
@@ -63,8 +66,8 @@ def askme():
     question=qinfo['question']
 
 
-
-    return jsonify(chatbot(question))
+    answer = chatbot(question)
+    return jsonify({'answer': answer})
 
 
 if __name__ == "__main__":
