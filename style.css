@@ -602,7 +602,8 @@ video {
   flex-direction: column;
   align-items: center;
   width: calc(100% - 20px); /* Full width minus padding */
-  max-width: 500px; /* Same max width as input for consistency */
+  max-width: 700px; /* Same max width as input for consistency */
+  min-width: 10px;
   margin: auto; /* Center the form */
 }
 
