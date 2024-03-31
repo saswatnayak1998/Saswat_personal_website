@@ -617,12 +617,32 @@ video {
   border: 4px solid #f3f3f3;
   border-top: 4px solid #3498db;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 2s linear infinite;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+#answer-container {
+  width: calc(100% - 20px); /* Full width minus some padding */
+  max-width: 500px; /* Ensure it doesn't get too wide, matching the form */
+  margin: 20px auto 0; /* Top margin for spacing, auto for centering, 0 for bottom and sides */
+  padding: 10px; /* Add some padding inside the container */
+  box-sizing: border-box; /* Include padding in the width calculation */
+  word-wrap: break-word; /* Ensure long words do not cause overflow */
+  text-align: center; /* Optionally center the text */
+}
+#loading {
+  display: none; /* Initially hidden */
+  border: 4px solid #f3f3f3; /* Light grey border */
+  border-top: 4px solid #3498db; /* Blue border top for spinning effect */
+  border-radius: 50%; /* Rounded shape */
+  width: 50px;
+  height: 50px;
+  margin-top: 20px; /* Space between the button and the spinner */
+  animation: spin 1s linear infinite; /* Spinning animation */
 }

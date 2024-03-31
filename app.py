@@ -48,8 +48,8 @@ def chatbot(question):
         Question: {input}""")
 
         document_chain = create_stuff_documents_chain(llm, prompt)
-
-        retriever = vector.as_retriever()
+ 
+        retriever = vector.as_retriever(search_kwargs={"k":1})
         retrieval_chain = create_retrieval_chain(retriever, document_chain)
         response = retrieval_chain.invoke({"input": question})
         with open(pickle_path, 'wb') as file:
