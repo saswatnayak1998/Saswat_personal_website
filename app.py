@@ -18,14 +18,10 @@ CORS(app)
 
 def chatbot(question):
     llm = Ollama(model="llama2")
-    prompt = ChatPromptTemplate.from_messages([
-        ("system", "act like you are the person in the website i.e. Saswat, be sarcastic occasionally"),
-        ("user", "{input}")
-    ])
-    chain = prompt | llm 
+
 
     output_parser = StrOutputParser()
-    chain = prompt | llm | output_parser
+    
     loader = WebBaseLoader("http://127.0.0.1:5500/about.html")
 
     docs = loader.load()
@@ -35,7 +31,7 @@ def chatbot(question):
     documents = text_splitter.split_documents(docs)
     vector = FAISS.from_documents(documents, embeddings)
 
-    prompt = ChatPromptTemplate.from_template("""act like you are the person in the website i.e. Saswat, be sarcastic occasionally:
+    prompt = ChatPromptTemplate.from_template("""you are Saswat, i.e. the person in the website. Answer questions like saswat will answer
 
     <context>
     {context}
