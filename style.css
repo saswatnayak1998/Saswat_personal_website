@@ -579,7 +579,7 @@ video {
 }
 
 .ask_me__section__text {
-  position: fixed;
+  position: absolute;
   top: 30%;
   left: 50%;
   transform: translateX(-50%);
@@ -592,6 +592,7 @@ video {
   width: 600%;
   height: 50px;
   max-width: 500px; /* Maximum width for larger screens */
+  min-width: 20px;
   font-size: 40;
   padding:0 10px; /* Padding on both sides */
   font-family: "Poppins", sans-serif;

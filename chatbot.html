@@ -51,7 +51,7 @@
         const formData = new FormData(event.target);
         const question = formData.get('question'); // Get the question from the form
     
-        fetch('http://127.0.0.1:5000/ask', {
+        fetch('https://sknayak-b22d4000-757a-4ff4-8914-b04cea705eee.socketxp.com/ask', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json', // Indicate that we're sending JSON data

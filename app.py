@@ -1,7 +1,4 @@
 from flask import Flask, render_template, request, jsonify
-
-from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
 import langchain
 from langchain_core.output_parsers import StrOutputParser
 from langchain.chains import create_retrieval_chain
@@ -13,7 +10,7 @@ from langchain_community.document_loaders import WebBaseLoader
 from langchain_community.llms import Ollama
 from langchain_core.prompts import ChatPromptTemplate
 from flask_cors import CORS
-
+import os
 
 # instantiate Flask app and database
 app = Flask(__name__)
@@ -22,7 +19,7 @@ CORS(app)
 def chatbot(question):
     llm = Ollama(model="llama2")
     prompt = ChatPromptTemplate.from_messages([
-        ("system", "act like you are the person in the website, be sarcastic sometimes"),
+        ("system", "act like you are the person in the website i.e. Saswat, be sarcastic occasionally"),
         ("user", "{input}")
     ])
     chain = prompt | llm 
@@ -34,9 +31,6 @@ def chatbot(question):
     docs = loader.load()
 
     embeddings = OllamaEmbeddings()
-
-
-
     text_splitter = RecursiveCharacterTextSplitter()
     documents = text_splitter.split_documents(docs)
     vector = FAISS.from_documents(documents, embeddings)
