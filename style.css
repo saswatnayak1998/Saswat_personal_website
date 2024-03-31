@@ -628,13 +628,17 @@ video {
 }
 
 #answer-container {
-  width: calc(100% - 20px); /* Full width minus some padding */
-  max-width: 500px; /* Ensure it doesn't get too wide, matching the form */
-  margin: 20px auto 0; /* Top margin for spacing, auto for centering, 0 for bottom and sides */
-  padding: 10px; /* Add some padding inside the container */
+  width: calc(100% - 20px); /* Adjust the width as needed */
+  max-width: 500px; /* Match the form width for consistency */
+  margin: 20px auto; /* Spacing above and centered alignment */
+  padding: 10px; /* Padding inside the container */
+  padding-bottom: 50px;
   box-sizing: border-box; /* Include padding in the width calculation */
-  word-wrap: break-word; /* Ensure long words do not cause overflow */
-  text-align: center; /* Optionally center the text */
+  word-wrap: break-word; /* Prevent horizontal overflow */
+  max-height: 200px; /* Maximum height before scrolling */
+  overflow-y: auto; /* Enable vertical scrolling when necessary */
+  text-align: center; /* Center the text, if desired */
+  border-radius: 10px; /* Optional: rounded corners */
 }
 #loading {
   display: none; /* Initially hidden */
