@@ -35,8 +35,8 @@ def chatbot(question):
 
         embeddings = OllamaEmbeddings()
         text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=200;
-            chunk_overlap=20;
+            chunk_size=200,
+            chunk_overlap=20
         )
         documents = text_splitter.split_documents(docs)
         vector = FAISS.from_documents(documents, embeddings)
