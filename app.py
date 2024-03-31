@@ -28,14 +28,16 @@ def chatbot(question):
 
     else:
         llm = Ollama(model="llama2")
-        output_parser = StrOutputParser()
         
         loader = WebBaseLoader("http://127.0.0.1:5500/about.html")
 
         docs = loader.load()
 
         embeddings = OllamaEmbeddings()
-        text_splitter = RecursiveCharacterTextSplitter()
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=200;
+            chunk_overlap=20;
+        )
         documents = text_splitter.split_documents(docs)
         vector = FAISS.from_documents(documents, embeddings)
 
@@ -54,7 +56,6 @@ def chatbot(question):
         response = retrieval_chain.invoke({"input": question})
         with open(pickle_path, 'wb') as file:
             pickle.dump(retrieval_chain, file)
-            print("Fuckin_Works")
 
             return response["answer"]
 

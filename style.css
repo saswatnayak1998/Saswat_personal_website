@@ -207,6 +207,11 @@ section {
 }
 
 /* ICONS */
+.icon-langchain{
+  cursor: pointer;
+  height: 20rem;
+
+}
 
 .icon {
   cursor: pointer;
@@ -524,15 +529,23 @@ footer p {
   font-size: 25px; /* Example font size */
 }
 .content-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  max-width: 1200px; /* Maximum width of the content area */
+  margin: 0 auto; /* Center the wrapper */
+  padding: 20px; /* Padding around the content */
 }
 
+/* Style for the main article text */
 .text-article {
-  width: 100%; /* Text takes 75% width */
-  margin-left: 40px;
-  /* Add padding, font size, etc., as necessary */
+  width: 100%; /* Article text takes full width of the wrapper */
+  padding-bottom: 10px; /* Space below the article text */
+}
+ul {
+  display: inline;
+}
+
+/* Style for list items */
+li {
+  display: outside;
 }
 
 .video-container {
@@ -563,7 +576,8 @@ footer p {
 
 /* Add this if you haven't styled .btn-color-1 class yet */
 .header-learning{
-  margin-left:40px;
+  margin-left:0px;
+  color:hwb(208 7% 83% / 0.706);
 }
 
 video {
@@ -625,6 +639,10 @@ video {
   width: 100%; /* Full width to center the button inside it */
   display: flex;
   justify-content: center; /* This will center the button */
+}
+.highlight{
+  margin-left:0px;
+  color:rgb(252, 126, 1);
 }
 #loading {
   display: none;

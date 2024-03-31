@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Saswat Nayak Blogs</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Saswat Nayak</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    
+    <main class="content-wrapper">
+        <h1>The Superiority of <b class="highlight">DBSCAN</b> in Unsupervised Machine Learning</h1>
+        <article class="text-article">
+            <p>
+            DBSCAN, short for Density-Based Spatial Clustering of Applications with Noise, 
+            offers several compelling advantages over other clustering methods like KMeans. 
+            It excels in its ability to discover clusters of arbitrary shapes and sizes, 
+            which are often encountered in real-world data sets. Unlike KMeans, which assumes 
+            clusters are spherical and often requires the number of clusters to be specified 
+            in advance, DBSCAN operates based on density, allowing it to adapt to the data's 
+            intrinsic structure.<br>
+        
+            Moreover, DBSCAN's robustness to outliers allows it to effectively separate noise 
+            from meaningful data clusters. This makes it particularly useful in applications 
+            where outlier detection is as crucial as cluster discovery, such as in fraud 
+            detection or anomaly identification.<br>
+        
+            Another area where DBSCAN outperforms KMeans is in the minimal requirement of domain 
+            knowledge. It automatically determines the number of clusters based on the input 
+            parameters, <em>eps</em> and <em>min_samples</em>, reducing the need for trial and error 
+            inherent in deciding the value of K for KMeans.<br>
+        
+            These unique attributes of DBSCAN make it a versatile and powerful tool for data analysis, 
+            providing insightful clustering results that are closely aligned with complex data patterns.
+            <br>
+            Initially, each point has a unique color.As we analyze each point with a circle:<br><br>
+    
+    
+            - If it's a core point, change its color along with its neighbors' colors to the same as the current point.<br><br>
+    
+            - Neighbors' neighbors should also change color if they are connected, and so on, until no more changes occur.<br><br>
+    
+            Eventually, we expect to see two dominant clusters with distinct colors for this specific dataset. KMeans would have failed miserably in this case.
+            
+            </p>
+            
+    
+        </article>
+        <div class="video-container">
+            <!-- <video width="320" height="240" autoplay controls>
+              <source src="./assets/dbscan_animation18.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video> -->
+            <video width="320" height="240" autoplay controls>
+                <source src="./assets/dbscan_animation18.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+              </video>
+            <button class="btn btn-color-1" onclick="location.href='https://github.com/saswatnayak1998'">
+              Code
+            </button>
+          </div>
+    </main>
+    
+    
+
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:sknayak@wisc.edu">sknayak@wisc.edu</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.linkedin.com/in/saswat-nayak-664a30121/">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2023 Saswat Nayak. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
