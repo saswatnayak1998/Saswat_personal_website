@@ -573,31 +573,44 @@ video {
 
 #ask_me {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 1rem; /* Reduced gap for smaller screens */
-  height: auto; /* Adjust height automatically */
+  align-items: center;
+  position: absolute; /* Position it absolutely within the viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto; /* This will help in centering */
 }
 
-.ask_me__section__text {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
+/* Adjustments to the input to make it look better */
 .ask_me__ask_me_anything {
-  border-radius: 30px;
-  position: relative;
-
-  width: 600%;
+  width: 100%; /* Make it fill the form */
+  max-width: 500px; /* Ensure it doesn't get too wide */
   height: 50px;
-  max-width: 500px; /* Maximum width for larger screens */
-  min-width: 20px;
-  font-size: 40;
-  padding:0 10px; /* Padding on both sides */
+  border-radius: 30px;
+  padding: 0 10px;
+  font-size: 20px; /* Adjusted for better readability */
   font-family: "Poppins", sans-serif;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem auto; /* Center it horizontally and add margin at the bottom */
+}
 
+/* Style the form to handle the layout */
+#ask-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% - 20px); /* Full width minus padding */
+  max-width: 500px; /* Same max width as input for consistency */
+  margin: auto; /* Center the form */
+}
+
+/* Center the button container */
+.btn-container {
+  width: 100%; /* Full width to center the button inside it */
+  display: flex;
+  justify-content: center; /* This will center the button */
 }
 #loading {
   display: none;
