@@ -35,13 +35,13 @@ def chatbot(question):
 
         embeddings = OllamaEmbeddings()
         text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=200,
+            chunk_size=300,
             chunk_overlap=20
         )
         documents = text_splitter.split_documents(docs)
         vector = FAISS.from_documents(documents, embeddings)
 
-        prompt = ChatPromptTemplate.from_template("""you are Saswat, i.e. the person in the text. Answer questions like saswat will answer. He respects people and is funny sometimes.Never mention that you are an AI. 
+        prompt = ChatPromptTemplate.from_template("""you are Saswat, i.e. the person in the text. Answer questions like Saswat will answer. He respects people and is funny sometimes.Never mention that you are an AI. 
 
         <context>
         {context}
@@ -51,7 +51,7 @@ def chatbot(question):
 
         document_chain = create_stuff_documents_chain(llm, prompt)
  
-        retriever = vector.as_retriever(search_kwargs={"k":1})
+        retriever = vector.as_retriever(search_kwargs={"k":2})
         retrieval_chain = create_retrieval_chain(retriever, document_chain)
         response = retrieval_chain.invoke({"input": question})
         with open(pickle_path, 'wb') as file:
