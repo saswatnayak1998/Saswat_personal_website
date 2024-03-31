@@ -576,25 +576,38 @@ video {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute; /* Position it absolutely within the viewport */
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  margin: auto; /* This will help in centering */
+  margin: auto;
 }
 
-/* Adjustments to the input to make it look better */
 .ask_me__ask_me_anything {
-  width: 100%; /* Make it fill the form */
+  width: 80%; /* Make it responsive */
   max-width: 500px; /* Ensure it doesn't get too wide */
+  min-width: 250px; /* Ensure it doesn't get too narrow */
   height: 50px;
   border-radius: 30px;
   padding: 0 10px;
-  font-size: 20px; /* Adjusted for better readability */
+  font-size: 20px;
   font-family: "Poppins", sans-serif;
-  margin: 0 auto 2rem auto; /* Center it horizontally and add margin at the bottom */
+  margin: 0 auto 2rem auto;
 }
+
+/* Media query for devices with width less than 600px */
+@media (max-width: 600px) {
+  #ask_me {
+    position: fixed; /* Use fixed to ensure it's always centered in the viewport */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; /* Use a percentage to make it responsive */
+    margin: 0;
+  }
+}
+
 
 /* Style the form to handle the layout */
 #ask-form {
