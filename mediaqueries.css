@@ -14,8 +14,7 @@
 
 @media screen and (max-width: 1200px) {
   #desktop-nav {
-    flex-direction: column;
-    text-align: center;
+    display: none;
   }
   #hamburger-nav {
     display: flex;
