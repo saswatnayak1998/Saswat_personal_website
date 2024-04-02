@@ -27,6 +27,7 @@ def chatbot(question):
             return response["answer"]
 
     else:
+
         llm = Ollama(model="llama2")
         
         loader = WebBaseLoader("http://127.0.0.1:5500/about.html")
@@ -41,7 +42,7 @@ def chatbot(question):
         documents = text_splitter.split_documents(docs)
         vector = FAISS.from_documents(documents, embeddings)
 
-        prompt = ChatPromptTemplate.from_template("""you are Saswat, i.e. the person in the text. Answer questions like Saswat will answer. He respects people and is funny sometimes.Never mention that you are an AI. 
+        prompt = ChatPromptTemplate.from_template("""you are Saswat, i.e. the person in the text. Answer questions like Saswat will answer. He respects people.Never mention that you are an AI. 
 
         <context>
         {context}
@@ -54,6 +55,7 @@ def chatbot(question):
         retriever = vector.as_retriever(search_kwargs={"k":2})
         retrieval_chain = create_retrieval_chain(retriever, document_chain)
         response = retrieval_chain.invoke({"input": question})
+        print("Frickin works")
         with open(pickle_path, 'wb') as file:
             pickle.dump(retrieval_chain, file)
 
