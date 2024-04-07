@@ -18,7 +18,7 @@
     </script>
 
     <nav id="desktop-nav">
-        <div class="logo">Dashboard to visualize real time key for a listed company</div>
+        <div class="logo">Dashboard to visualize real time analytics for a listed company</div>
     </nav>
     <div>
         
@@ -37,7 +37,11 @@
             <div id="loading" style="display: none;"></div>
             <div id="answer-container"></div>
             <div>An end-to-end data engineering project on real-time stock market data using Kafka, Amazon Web Services (AWS), Apache Kafka, Glue, Athena, and SQL.</div>
+            <div class="section__pic-container">
+                <img src="./assets/Architecture.jpg" />
+              </div>
         </div>
+
     </div>
     
   <main class="content-wrapper">
@@ -60,7 +64,7 @@
             headers: {
                 'Content-Type': 'application/json', // Indicate that we're sending JSON data
             },
-            body: JSON.stringify({ "about": about }), // Send the question as JSON
+            body: JSON.stringify({ "question": question }), // Send the question as JSON
         })
         .then(response => response.json()) // Parse the response as JSON
         .then(data => {

@@ -13,6 +13,10 @@ from flask_cors import CORS
 import os
 import dill as pickle
 from newsapi import NewsApiClient
+from newsapi.newsapi_client import NewsApiClient
+from datetime import datetime, timedelta
+from textblob import TextBlob
+
 
 
 # instantiate Flask app and database
@@ -81,19 +85,29 @@ def stock_news():
 
     info = request.json
 
-    about=info['about']
-    # Init
+    about=info['question']
+    today_date = datetime.now()
+    dates = [today_date - timedelta(days=i) for i in range(9)]
+
+    # Format dates as strings in Year-Month-Day format
+    formatted_dates = [date.strftime("%Y-%m-%d") for date in dates]
+
     newsapi = NewsApiClient(api_key='c96d36fa06c842a084ddfe6ef02f127c')
-    all_articles = newsapi.get_top_headlines(q=about,
-                                      sources='bbc-news,the-verge',
-                                      domains='bbc.co.uk,techcrunch.com',
-                                      from_param='2017-12-01',
-                                      to='2017-12-12',
-                                      language='en',
-                                      sort_by='relevancy',
-                                      page=1)
-    answer = 1
-    return jsonify({'answer': all_articles})
+
+    # /v2/top-headlines
+    all_articles = newsapi.get_everything(q=about,
+                                        sources='bbc-news,the-verge',
+                                        from_param=formatted_dates[0],
+                                        to=formatted_dates[2],
+                                        language='en',
+                                        sort_by='relevancy',
+                                        page=1)
+    sentiment_score = 0
+    for news in all_articles['articles']:
+        text = news['description']
+        blob = TextBlob(text)
+        sentiment_score = sentiment_score + blob.sentiment.polarity
+    return jsonify({'answer': sentiment_score})
 
 
 if __name__ == "__main__":
