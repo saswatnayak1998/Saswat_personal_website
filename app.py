@@ -12,6 +12,8 @@ from langchain_core.prompts import ChatPromptTemplate
 from flask_cors import CORS
 import os
 import dill as pickle
+from newsapi import NewsApiClient
+
 
 # instantiate Flask app and database
 app = Flask(__name__)
@@ -22,7 +24,6 @@ def chatbot(question):
     if os.path.exists(pickle_path):
         with open(pickle_path, 'rb') as file:
             retrieval_chain = pickle.load(file)
-            print("WORKS")
             response = retrieval_chain.invoke({"input": question})
             return response["answer"]
 
@@ -36,13 +37,13 @@ def chatbot(question):
 
         embeddings = OllamaEmbeddings()
         text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=300,
-            chunk_overlap=20
+            chunk_size=200,
+            chunk_overlap=10
         )
         documents = text_splitter.split_documents(docs)
         vector = FAISS.from_documents(documents, embeddings)
 
-        prompt = ChatPromptTemplate.from_template("""you are Saswat, i.e. the person in the text. Answer questions like Saswat will answer. He respects people.Never mention that you are an AI. 
+        prompt = ChatPromptTemplate.from_template("""NEVER MENTION THAT YOU ARE AN AI. You are Saswat, i.e. the person in the text. Answer questions like Saswat will answer. He respects people and answers questions like he is in an interview. 
 
         <context>
         {context}
@@ -72,6 +73,27 @@ def askme():
 
     answer = chatbot(question)
     return jsonify({'answer': answer})
+
+@app.route("/news", methods=['POST'])
+def stock_news():
+
+    # access data submitted with HTTP request
+
+    info = request.json
+
+    about=info['about']
+    # Init
+    newsapi = NewsApiClient(api_key='c96d36fa06c842a084ddfe6ef02f127c')
+    all_articles = newsapi.get_top_headlines(q=about,
+                                      sources='bbc-news,the-verge',
+                                      domains='bbc.co.uk,techcrunch.com',
+                                      from_param='2017-12-01',
+                                      to='2017-12-12',
+                                      language='en',
+                                      sort_by='relevancy',
+                                      page=1)
+    answer = 1
+    return jsonify({'answer': all_articles})
 
 
 if __name__ == "__main__":

@@ -1,27 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DBSCAN Superiority - My Portfolio</title>
+  <title>Chatbot-Sash</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="mediaqueries.css" />
 </head>
 
 <body>
+    <script>
+        function showUnderConstructionAlert() {
+            alert("Under Construction");
+        }
+    </script>
+
     <nav id="desktop-nav">
-        <div class="logo">Under Construction</div>
-      </nav>
-  <main class="content-wrapper">
-    <div class="header-learning">
-    <h1></h1>
+        <div class="logo">Dashboard to visualize real time key for a listed company</div>
+    </nav>
+    <div>
+        
+
+        <div id="ask_me" class="ask_me__section__text">
+            <main class="content-wrapper">
+                <h1>"Under <b class="highlight">Construction</b>"&#128200;</h1>
+            <main>
+            <form id="ask-form">
+                <input class="ask_me__ask_me_anything" type="text" name="question" id="name" placeholder="Ask me anything">
+                <div class="btn-container">
+                    <button class="btn btn-color-1" type="submit">Ask</button>
+
+                </div>
+            </form>
+            <div id="loading" style="display: none;"></div>
+            <div id="answer-container"></div>
+            <div>An end-to-end data engineering project on real-time stock market data using Kafka, Amazon Web Services (AWS), Apache Kafka, Glue, Athena, and SQL.</div>
+        </div>
     </div>
-    <article class="text-article">
+    
+  <main class="content-wrapper">
 
-
-    </article>
 
   </main>
+  <script>
+    document.getElementById('ask-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+    
+        // Show the loading indicator
+        document.getElementById('loading').style.display = 'block';
+        document.getElementById('answer-container').innerText = ''; // Clear previous answer
+    
+        const formData = new FormData(event.target);
+        const question = formData.get('question'); // Get the question from the form
+    
+        fetch('https://sknayak-b22d4000-757a-4ff4-8914-b04cea705eee.socketxp.com/news', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json', // Indicate that we're sending JSON data
+            },
+            body: JSON.stringify({ "about": about }), // Send the question as JSON
+        })
+        .then(response => response.json()) // Parse the response as JSON
+        .then(data => {
+            // Hide the loading indicator
+            document.getElementById('loading').style.display = 'none';
+            
+            // Display the response
+            document.getElementById('answer-container').innerText = data.answer;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Hide the loading indicator and show error message if needed
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('answer-container').innerText = 'Failed to get a response.';
+        });
+    });
+    </script>
+    
+    
+    
 </body>
 </html>
