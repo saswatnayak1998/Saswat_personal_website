@@ -36,10 +36,7 @@
             </form>
             <div id="loading" style="display: none;"></div>
             <div id="answer-container"></div>
-            <div>An end-to-end data engineering project on real-time stock market data using Kafka, Amazon Web Services (AWS), Apache Kafka, Glue, Athena, and SQL.
-                It fetches new stock market data everyday and when you click on the "Get Sentiment" button for any listed tech giant, you will get the sentiment for that stock based on it's last 2 days news. The aim of 
-                this project is not to have a bleeding edge, highly accurate sentiment score but to implement the architecture below. I will have a dashboard with daily stock price movement and the daily sentiment.<br>
-            </div>
+     
             <h1>About the <b class="highlight">Architecture</b>&#128200;</h1>
             <div>Producer sends fresh stock market data to kafka once every day. The data gets stored in S3 bucket(json files). AWS Glue Crawler scans the data in S3, extracts the schema information and stores metadata in AWS Glue catalog. Then I use AWS Athena to run SQL queries on the data.
             </div>
