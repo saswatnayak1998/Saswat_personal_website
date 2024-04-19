@@ -357,7 +357,10 @@ section {
   gap: 2rem; /* Add some space between the project containers */
   max-width: 100%; /* Ensure the container does not exceed the width of the viewport */
   padding: 0 2rem; /* Add padding on the left and right */
+
 }
+
+
 .experience-details-container2 {
   display: flex;
   flex-direction: row; /* Align project containers in a row */

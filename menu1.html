@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="./assets/profile-pic.ico" type="image/x-icon">
+
+      <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1Z3J92KPCK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-1Z3J92KPCK');
+  </script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Saswat Nayak</div>
+      <div>
+        <ul class="nav-links">
+
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Saswat Nayak</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+
+
+    <section id="projects">
+        <p class="section__text__p1"></p>
+        <h1 class="title">Live Projects</h1>
+        <div class="experience-details-container">
+          <div class="about-containers">
+            <div class="details-container color-container">
+              <div class="card-inner">
+                <div class="card-front">
+                  <div class="article-container">
+                  <img src="./assets/DBSCAN.png" alt="Project 1" class="project-img" /></div>
+                  <h2 class="experience-sub-title project-title">DBSCAN vs Kmeans</h2>
+                  <div class="btn-container">
+                    <button class="btn btn-color-3 project-btn1" onclick="window.location.href='learnings1.html'">Live Demo</button>
+                    <button class="btn btn-color-2 project-btn about-btn">About</button>
+                  </div>
+                </div>
+                <!-- Back Side -->
+                <div class="card-back">
+                  <p>In a realm where math weaves deep complexities,
+                      There exists an algorithm, clear as day,
+                      So pure and plain, it catches the eye with ease.</p>
+                  <button class="btn btn-color-2 project-btn flip-back-btn">Back</button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="details-container color-container">
+              <div class="card-inner">
+                <!-- Front Side -->
+                <div class="card-front">
+                  <div class="article-container">
+                  <img src="./assets/chat_bot.png" alt="Project 1" class="project-img" /></div>
+                  <h2 class="experience-sub-title project-title">Personalized Chatbot, Sash</h2>
+                  <div class="btn-container">
+                    <button class="btn btn-color-3 project-btn1" onclick="window.location.href='chatbot.html'">Live Demo</button>
+                    <button class="btn btn-color-2 project-btn about-btn">About</button>
+                  </div>
+                </div>
+                <!-- Back Side -->
+                <div class="card-back">
+                  <p>A chatbot called Sash answering questions about what I know and what I don't know in a funny way. Sash has been hired as a replacement for me. It's a Llama2 7B model fine-tuned on my data using LangChain. Heavily optimized using vector store and embeddings to provide fast replies.</p>
+                  <button class="btn btn-color-2 project-btn flip-back-btn">Back</button>
+                </div>
+              </div>
+            </div>
+  
+            <div class="details-container color-container">
+              <div class="card-inner">
+                <!-- Front Side -->
+                <div class="card-front">
+                  <div class="article-container">
+                  <img src="./assets/stocks.png" onclick="window.location.href='menu.html'"" alt="Project 1" class="project-img" /></div>
+                  <h2 class="experience-sub-title project-title">Real Time Data Ingestion and Analytics</h2>
+                  <div class="btn-container">
+                    <button class="btn btn-color-3 project-btn1" onclick="window.location.href='stocks_news.html'">Live Demo</button>
+                    <button class="btn btn-color-2 project-btn about-btn">About</button>
+                  </div>
+                </div>
+                <!-- Back Side -->
+                <div class="card-back">.
+                  <p>An end-to-end data engineering project on real-time stock market data using Kafka, Amazon Web Services (AWS), Apache Kafka, Glue, Athena, and SQL.</p>
+                  <button class="btn btn-color-2 project-btn flip-back-btn">Back</button>
+                </div>
+              </div>
+            </div>
+  
+            <div class="details-container color-container">
+              <div class="card-inner">
+                <!-- Front Side -->
+                <div class="card-front">
+                  <div class="article-container">
+                  <img src="./assets/lyft.png" alt="Project 1" class="project-img" /></div>
+                  <h2 class="experience-sub-title project-title">Lyft Data Analytics. End to End Data Engineering</h2>
+                  <div class="btn-container">
+                    <!-- <button class="btn btn-color-3 project-btn1" onclick="window.open('./assets/Lyft_Dashboard.pdf')">Dashboard</button> -->
+                    <button class="btn btn-color-3 project-btn1" onclick="window.location.href='lyft.html'">More</button>
+  
+                    <button class="btn btn-color-2 project-btn about-btn">About</button>
+  
+                  </div>
+                </div>
+                <!-- Back Side -->
+                <div class="card-back">
+                  <p>Analyze Lyft data using various tools and technologies, including GCP Storage, Python, Compute Instance, Mage Data Pipeline Tool, BigQuery, and Looker Studio. </p>
+                  <button class="btn btn-color-2 project-btn flip-back-btn">Back</button>
+                </div>
+              </div>
+            </div>
+  
+            
+          </div>
+        </div>
+        <img
+          src="./assets/arrow.png"
+          alt="Arrow icon"
+          class="icon arrow"
+          onclick="location.href='./#contact'"
+        />
+      </section>
+
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:sknayak@wisc.edu">sknayak@wisc.edu</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.linkedin.com/in/saswat-nayak-664a30121/">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2023 Saswat Nayak. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
