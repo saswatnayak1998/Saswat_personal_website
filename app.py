@@ -87,7 +87,7 @@ def stock_news():
 
     about=info['question']
     today_date = datetime.now()
-    dates = [today_date - timedelta(days=i) for i in range(9)]
+    dates = [today_date - timedelta(days=i) for i in range(5)]
 
     # Format dates as strings in Year-Month-Day format
     formatted_dates = [date.strftime("%Y-%m-%d") for date in dates]
