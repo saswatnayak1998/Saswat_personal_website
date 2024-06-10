@@ -189,11 +189,27 @@ section {
   text-align: center;
 }
 
+
 .section__text__p2 {
   font-size: 1.75rem;
   margin-bottom: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
+.cursor {
+  display: inline-block;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
 .title {
   font-size: 3rem;
   text-align: center;
@@ -685,9 +701,3 @@ video {
   margin-top: 20px; /* Space between the button and the spinner */
   animation: spin 1s linear infinite; /* Spinning animation */
 }
-
-
-
-
-
-
