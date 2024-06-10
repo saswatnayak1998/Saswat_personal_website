@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const roles = ["Material Scientist", "AI Developer", "Photonics", "Healthcare Analytics","Software Development"];
   let currentRoleIndex = 0;
   const roleElement = document.getElementById("role");
-  const prefix = "|";
+  const prefix = "#";
 
   function typeRole(role, callback) {
     let charIndex = 0;
@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (charIndex < role.length) {
         roleElement.innerHTML = prefix + role.substring(0, charIndex + 1);
         charIndex++;
-        setTimeout(typeChar, 20); // Faster typing speed
+        setTimeout(typeChar, 10); // Faster typing speed
       } else {
-        setTimeout(callback, 1000); // Delay before deleting
+        setTimeout(callback, 500); // Delay before deleting
       }
     }
 
