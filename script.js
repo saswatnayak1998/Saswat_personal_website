@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const roles = ["Material Scientist", "AI Developer", "Photonics", "Healthcare Analytics","Software Development"];
+  const roles = ["Analytics Engineer", "Software Developer", "Material Scientist", "AI Developer", "Photonics"];
   let currentRoleIndex = 0;
   const roleElement = document.getElementById("role");
   const prefix = "#";
