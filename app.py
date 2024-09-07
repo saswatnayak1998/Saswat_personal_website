@@ -33,7 +33,7 @@ def chatbot(question):
 
     else:
 
-        llm = Ollama(model="llama2")
+        llm = Ollama(model="llama3")
         
         loader = WebBaseLoader("http://127.0.0.1:5500/about.html")
 
