@@ -109,7 +109,6 @@ def stock_news():
         sentiment_score = sentiment_score + blob.sentiment.polarity
     return jsonify({'answer': sentiment_score})
 
-
 if __name__ == "__main__":
     app.run(debug=True)
 
