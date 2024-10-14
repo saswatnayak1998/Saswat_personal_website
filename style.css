@@ -715,7 +715,7 @@ video {
 }
 
 .btn-color-3:hover {
-  box-shadow: 0 0 40px #3498db, 0 0 60px #3498db;
+  box-shadow: 0 0 40px #d7c30de1, 0 0 60px #fcf80e;
   transform: scale(1.05);
 }
 
