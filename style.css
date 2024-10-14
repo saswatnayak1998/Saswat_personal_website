@@ -711,12 +711,12 @@ video {
 
 
 .btn-color-3 {
-  box-shadow: 0 0 20px #3498db;
+  box-shadow: 0 0 20px #ffb700;
 }
 
 .btn-color-3:hover {
-  box-shadow: 0 0 40px #d7c30de1, 0 0 60px #fcf80e;
-  transform: scale(1.05);
+  box-shadow: 0 0 40px #ffe600e1, 0 0 60px #fffb00;
+  transform: scale(1.5);
 }
 
 /* Arrow Styling */
