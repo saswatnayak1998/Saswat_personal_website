@@ -701,3 +701,53 @@ video {
   margin-top: 20px; /* Space between the button and the spinner */
   animation: spin 1s linear infinite; /* Spinning animation */
 }
+
+
+
+
+
+
+
+
+
+.btn-color-3 {
+  box-shadow: 0 0 20px #3498db;
+}
+
+.btn-color-3:hover {
+  box-shadow: 0 0 40px #3498db, 0 0 60px #3498db;
+  transform: scale(1.05);
+}
+
+/* Arrow Styling */
+.arrow {
+  position: absolute;
+  font-size: 24px;
+  color: #3498db;
+  animation: bounce 1.5s infinite;
+}
+
+/* Top Arrow */
+.arrow-top {
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Bottom Arrow */
+.arrow-bottom {
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 0.75s;
+}
+
+/* Keyframes for arrow bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+}
